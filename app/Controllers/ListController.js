@@ -39,7 +39,7 @@ export default class ListController {
             title: "Are you sure?",
             text: "Do you really want to delete this list?",
             icon: "warning",
-            buttons: ["Nope", "Yeah"],
+            buttons: ["Not really...", "Yeah, demolish it!"],
             dangerMode: true
         })
             .then((sure) => {
@@ -65,7 +65,7 @@ export default class ListController {
             title: "Are you sure?",
             text: "Do you really want to delete this task?",
             icon: "warning",
-            buttons: ["Nope", "Yeah"],
+            buttons: ["Not really...", "Yeah, demolish it!"],
             dangerMode: true
         })
             .then((sure) => {

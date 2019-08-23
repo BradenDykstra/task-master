@@ -16,7 +16,7 @@ export default class List {
                 <ul>`
         template += this.drawTasks(index);
         template += `</ul>
-            <form onsubmit="app.controllers.listController.addTask(${index}, event)">
+            <form onsubmit="app.controllers.listController.addTask(${index}, event)" autocomplete="off">
                 <input type="text" class="form-control mb-2" name="task" placeholder="Add a task">
                 <button class="mb-2 btn btn-success" type="submit"><i class="fas fa-plus"></i></button>
             </form>
