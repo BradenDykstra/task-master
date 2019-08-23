@@ -28,6 +28,15 @@ export default class ValuesService {
         this.saveLists();
     }
 
+    completeTask(index, tIndex) {
+        if (_state.lists[index].tasks[tIndex].complete) {
+            _state.lists[index].tasks[tIndex].complete = false;
+        } else {
+            _state.lists[index].tasks[tIndex].complete = true;
+        }
+        this.saveLists();
+    }
+
     //TODO  Here is where we handle all of our data manipulation, 
     //given the information you need in the controller, 
     //what methods will be required to support that functionality?

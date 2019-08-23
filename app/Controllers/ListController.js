@@ -44,7 +44,10 @@ export default class ListController {
 
     addTask(index, event) {
         event.preventDefault();
-        let newTask = event.target.task.value;
+        let newTask = {
+            task: event.target.task.value,
+            complete: false
+        }
         _listService.addTask(index, newTask);
         _drawLists();
     }
@@ -54,6 +57,11 @@ export default class ListController {
         if (sure) {
             _listService.deleteTask(index, tIndex);
         }
+        _drawLists();
+    }
+
+    completeTask(index, tIndex) {
+        _listService.completeTask(index, tIndex);
         _drawLists();
     }
 }
