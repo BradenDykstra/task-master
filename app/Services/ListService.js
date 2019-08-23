@@ -1,4 +1,4 @@
-import List from "../models/List.js";
+import List from "../Models/List.js";
 
 //Private
 let _state = {
