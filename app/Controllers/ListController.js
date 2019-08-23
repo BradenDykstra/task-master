@@ -39,7 +39,7 @@ export default class ListController {
             title: "Are you sure?",
             text: "Do you really want to delete this list?",
             icon: "warning",
-            buttons: ["Not really...", "Yeah, demolish it!"],
+            buttons: ["Not really...", "Yeah, destroy it!"],
             dangerMode: true
         })
             .then((sure) => {
@@ -63,9 +63,9 @@ export default class ListController {
     deleteTask(index, tIndex) {
         swal({
             title: "Are you sure?",
-            text: "Do you really want to delete this task?",
+            text: "Do you really want to delete this item?",
             icon: "warning",
-            buttons: ["Not really...", "Yeah, demolish it!"],
+            buttons: ["Not really...", "Yeah, destroy it!"],
             dangerMode: true
         })
             .then((sure) => {
