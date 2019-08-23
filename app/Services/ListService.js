@@ -7,7 +7,7 @@ let _state = {
 
 
 //Public
-export default class ValuesService {
+export default class ListService {
     addList(newList) {
         _state.lists.push(new List(newList));
         this.saveLists();
