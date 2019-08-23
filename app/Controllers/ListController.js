@@ -83,4 +83,9 @@ export default class ListController {
         _listService.completeTask(index, tIndex);
         _drawLists();
     }
+
+    moveTask(index, tIndex, direction) {
+        _listService.moveTask(index, tIndex, direction);
+        _drawLists();
+    }
 }

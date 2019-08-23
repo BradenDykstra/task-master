@@ -37,6 +37,20 @@ export default class ListService {
         this.saveLists();
     }
 
+    moveTask(index, tIndex, direction) {
+        if (direction == "up") {
+            let moving = _state.lists[index].tasks[tIndex];
+            let moving2 = _state.lists[index].tasks[tIndex - 1];
+            _state.lists[index].tasks[tIndex] = moving2;
+            _state.lists[index].tasks[tIndex - 1] = moving;
+        } else if (direction == "down") {
+            let moving = _state.lists[index].tasks[tIndex];
+            let moving2 = _state.lists[index].tasks[tIndex + 1];
+            _state.lists[index].tasks[tIndex] = moving2;
+            _state.lists[index].tasks[tIndex + 1] = moving;
+        }
+    }
+
     //TODO  Here is where we handle all of our data manipulation, 
     //given the information you need in the controller, 
     //what methods will be required to support that functionality?
