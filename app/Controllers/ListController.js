@@ -35,11 +35,19 @@ export default class ListController {
     }
 
     deleteList(index) {
-        let sure = confirm("Are you sure you want to delete this list?");
-        if (sure) {
-            _listService.deleteList(index);
-        }
-        _drawLists();
+        swal({
+            title: "Are you sure?",
+            text: "Do you really want to delete this list?",
+            icon: "warning",
+            buttons: ["Nope", "Yeah"],
+            dangerMode: true
+        })
+            .then((sure) => {
+                if (sure) {
+                    _listService.deleteList(index);
+                    _drawLists();
+                }
+            })
     }
 
     addTask(index, event) {
@@ -53,11 +61,22 @@ export default class ListController {
     }
 
     deleteTask(index, tIndex) {
-        let sure = confirm("Are you sure you want to delete this task?");
-        if (sure) {
-            _listService.deleteTask(index, tIndex);
-        }
-        _drawLists();
+        swal({
+            title: "Are you sure?",
+            text: "Do you really want to delete this task?",
+            icon: "warning",
+            buttons: ["Nope", "Yeah"],
+            dangerMode: true
+        })
+            .then((sure) => {
+                if (sure) {
+                    _listService.deleteTask(index, tIndex);
+                    _drawLists();
+                }
+            })
+        // if (sure) {
+        //     _listService.deleteTask(index, tIndex);
+        // }
     }
 
     completeTask(index, tIndex) {

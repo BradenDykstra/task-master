@@ -29,9 +29,9 @@ export default class List {
         let taskTemplate = '';
         this.tasks.forEach((task, tIndex) => {
             if (task.complete){
-                taskTemplate += `<li><strike>${task.task}</strike> <span class="text-success span-btn" onclick="app.controllers.listController.completeTask(${index}, ${tIndex})"><i class="fas fa-check"></i></span> <span class="text-danger span-btn" onclick="app.controllers.listController.deleteTask(${index}, ${tIndex})"><i class="fas fa-times"></i></span></li>`
+                taskTemplate += `<li style="color: ${this.textColor}"><strike>${task.task}</strike> <span class="text-success span-btn" onclick="app.controllers.listController.completeTask(${index}, ${tIndex})"><i class="fas fa-check"></i></span> <span class="text-danger span-btn" onclick="app.controllers.listController.deleteTask(${index}, ${tIndex})"><i class="fas fa-times"></i></span></li>`
             } else {
-                taskTemplate += `<li>${task.task} <span class="text-success span-btn" onclick="app.controllers.listController.completeTask(${index}, ${tIndex})"><i class="fas fa-check"></i></span> <span class="text-danger span-btn" onclick="app.controllers.listController.deleteTask(${index}, ${tIndex})"><i class="fas fa-times"></i></span></li>`
+                taskTemplate += `<li style="color: ${this.textColor}">${task.task} <span class="text-success span-btn" onclick="app.controllers.listController.completeTask(${index}, ${tIndex})"><i class="fas fa-check"></i></span> <span class="text-danger span-btn" onclick="app.controllers.listController.deleteTask(${index}, ${tIndex})"><i class="fas fa-times"></i></span></li>`
             }
         });
         return taskTemplate;
