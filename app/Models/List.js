@@ -10,9 +10,9 @@ export default class List {
 
     getTemplate(index) {
         let template = '';
-        template += `<div class="col-3 m-5 p-3 rounded" style="border: 2px solid ${this.textColor}; background: ${this.bgColor}">
+        template += `<div class="col-3 m-5 p-3 rounded" style="border: 5px solid ${this.textColor}; background: ${this.bgColor}">
                 <h3 style="color: ${this.textColor}">${this.name}</h3>
-                <hr>
+                <hr style="background-color: ${this.textColor}">
                 <ul>`
         template += this.drawTasks(index);
         template += `</ul>
