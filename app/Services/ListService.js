@@ -38,16 +38,23 @@ export default class ListService {
     }
 
     moveTask(index, tIndex, direction) {
-        if (direction == "up") {
-            let moving = _state.lists[index].tasks[tIndex];
-            let moving2 = _state.lists[index].tasks[tIndex - 1];
-            _state.lists[index].tasks[tIndex] = moving2;
-            _state.lists[index].tasks[tIndex - 1] = moving;
-        } else if (direction == "down") {
-            let moving = _state.lists[index].tasks[tIndex];
-            let moving2 = _state.lists[index].tasks[tIndex + 1];
-            _state.lists[index].tasks[tIndex] = moving2;
-            _state.lists[index].tasks[tIndex + 1] = moving;
+        if (tIndex == 0 && direction == "up") {
+
+        } else if (tIndex == _state.lists[index].tasks.length - 1 && direction == "down") {
+
+        } else {
+
+            if (direction == "up") {
+                let moving = _state.lists[index].tasks[tIndex];
+                let moving2 = _state.lists[index].tasks[tIndex - 1];
+                _state.lists[index].tasks[tIndex] = moving2;
+                _state.lists[index].tasks[tIndex - 1] = moving;
+            } else if (direction == "down") {
+                let moving = _state.lists[index].tasks[tIndex];
+                let moving2 = _state.lists[index].tasks[tIndex + 1];
+                _state.lists[index].tasks[tIndex] = moving2;
+                _state.lists[index].tasks[tIndex + 1] = moving;
+            }
         }
     }
 
