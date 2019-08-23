@@ -26,7 +26,9 @@ export default class ListController {
     addList(event) {
         event.preventDefault();
         let newList = {
-            name: event.target.name.value
+            name: event.target.name.value,
+            textColor: event.target.textColor.value,
+            bgColor: event.target.bgColor.value
         };
         _listService.addList(newList);
         _drawLists();

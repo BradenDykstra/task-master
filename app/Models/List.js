@@ -3,20 +3,22 @@ export default class List {
     //and the methods needed to create the view template for this model
     constructor(data) {
         this.name = data.name
+        this.textColor = data.textColor
+        this.bgColor = data.bgColor
         this.tasks = data.tasks || []
     }
 
     getTemplate(index) {
         let template = '';
-        template += `<div class="col-3 bg-secondary m-5 p-3 rounded">
-                <h3>${this.name}</h3>
+        template += `<div class="col-3 m-5 p-3 rounded" style="border: 2px solid ${this.textColor}; background: ${this.bgColor}">
+                <h3 style="color: ${this.textColor}">${this.name}</h3>
                 <hr>
                 <ul>`
         template += this.drawTasks(index);
         template += `</ul>
             <form onsubmit="app.controllers.listController.addTask(${index}, event)">
-                <input type="text" class="form-control" name="task" placeholder="Add a task">
-                <button class="btn btn-success" type="submit"><i class="fas fa-plus"></i></button>
+                <input type="text" class="form-control mb-2" name="task" placeholder="Add a task">
+                <button class="mb-2 btn btn-success" type="submit"><i class="fas fa-plus"></i></button>
             </form>
                 <button class="btn btn-danger" onclick="app.controllers.listController.deleteList(${index})">Delete</button>
                 </div>`
